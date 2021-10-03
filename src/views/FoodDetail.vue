@@ -42,23 +42,29 @@
                     <h4>
                         Harga : <strong>Rp. {{ product.harga }}</strong>
                     </h4>
-                    <form class="mt-4">
+                    <form class="mt-4" v-on:submit.prevent>
                         <div class="form-group">
                             <label for="jmlpesan">Jumlah Pesan</label>
                             <input
                                 type="text"
                                 class="form-control"
                                 id="jmlpesan"
+                                v-model="pesan.jumlah_pemesanan"
                             />
                         </div>
                         <div class="form-group">
                             <label for="keterangan">Keterangan</label>
                             <textarea
+                                v-model="pesan.keterangan"
                                 class="form-control"
                                 placeholder="Keterangan : Pedas, Nasi setengah..."
                             ></textarea>
                         </div>
-                        <button type="submit" class="btn btn-success">
+                        <button
+                            type="submit"
+                            class="btn btn-success"
+                            @click="pemesanan"
+                        >
                             <b-icon-cart></b-icon-cart> Pesan
                         </button>
                     </form>
@@ -80,11 +86,39 @@ export default {
     data() {
         return {
             product: {},
+            pesan: {},
         };
     },
     methods: {
         setProduct(data) {
             this.product = data;
+        },
+        pemesanan() {
+            this.pesan.product = this.product;
+            if (
+                this.pesan.jumlah_pemesanan &&
+                this.pesan.jumlah_pemesanan != 0
+            ) {
+                axios
+                    .post("http://localhost:3000/keranjangs", this.pesan)
+                    .then(() => {
+                        this.$router.push({ path: "/keranjang" });
+                        this.$toast.success("Sukses Masuk Keranjang.", {
+                            type: "success",
+                            position: "top-right",
+                            duration: 3000,
+                            dismissible: true,
+                        });
+                    })
+                    .catch((err) => console.log(err));
+            } else {
+                this.$toast.error("Jumlah Pesanan harus diisi", {
+                    type: "error",
+                    position: "top-right",
+                    duration: 3000,
+                    dismissible: true,
+                });
+            }
         },
     },
     mounted() {

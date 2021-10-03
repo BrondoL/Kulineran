@@ -6,7 +6,10 @@ import { BootstrapVue, BootstrapVueIcons } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import "../public/assets/css/my.css";
+import VueToast from "vue-toast-notification";
+import "vue-toast-notification/dist/theme-default.css";
 
+Vue.use(VueToast);
 Vue.use(BootstrapVue);
 Vue.use(BootstrapVueIcons);
 
