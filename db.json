@@ -99,33 +99,74 @@
       "gambar": "lontong-opor-ayam.jpg"
     }
   ],
-  "keranjangs": [
+  "keranjangs": [],
+  "pesanans": [
     {
-      "jumlah_pemesanan": "1",
-      "keterangan": "Pedes",
-      "product": {
-        "id": 1,
-        "kode": "K-01",
-        "nama": "Sate Ayam",
-        "harga": 16000,
-        "is_ready": true,
-        "gambar": "sate-ayam.jpg"
-      },
+      "nama": "wawik",
+      "no_meja": "22",
+      "keranjangs": [
+        {
+          "jumlah_pemesanan": "1",
+          "product": {
+            "id": 1,
+            "kode": "K-01",
+            "nama": "Sate Ayam",
+            "harga": 16000,
+            "is_ready": true,
+            "gambar": "sate-ayam.jpg"
+          },
+          "id": 1
+        },
+        {
+          "jumlah_pemesanan": "1",
+          "product": {
+            "id": 1,
+            "kode": "K-01",
+            "nama": "Sate Ayam",
+            "harga": 16000,
+            "is_ready": true,
+            "gambar": "sate-ayam.jpg"
+          },
+          "id": 2
+        },
+        {
+          "jumlah_pemesanan": "1",
+          "product": {
+            "id": 8,
+            "kode": "K-08",
+            "nama": "Kentang Goreng",
+            "harga": 5000,
+            "is_ready": true,
+            "gambar": "kentang-goreng.jpg"
+          },
+          "id": 3
+        },
+        {
+          "jumlah_pemesanan": "1",
+          "product": {
+            "id": 8,
+            "kode": "K-08",
+            "nama": "Kentang Goreng",
+            "harga": 5000,
+            "is_ready": true,
+            "gambar": "kentang-goreng.jpg"
+          },
+          "id": 4
+        },
+        {
+          "jumlah_pemesanan": "1",
+          "product": {
+            "id": 7,
+            "kode": "K-07",
+            "nama": "Pangsit 6 pcs",
+            "harga": 5000,
+            "is_ready": true,
+            "gambar": "pangsit.jpg"
+          },
+          "id": 5
+        }
+      ],
       "id": 1
-    },
-    {
-      "jumlah_pemesanan": "2",
-      "keterangan": "Nasi banyak",
-      "product": {
-        "id": 3,
-        "kode": "K-03",
-        "nama": "Nasi Rames",
-        "harga": 12000,
-        "is_ready": true,
-        "gambar": "nasi-rames.jpg"
-      },
-      "id": 2
     }
-  ],
-  "pesanans": []
+  ]
 }
